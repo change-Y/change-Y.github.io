@@ -73,10 +73,10 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: next
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy: git@github.com:change-Y/change-Y.github.io.git
 type: git
-branch: hexo
+branch: master
