@@ -3,23 +3,23 @@ title: 关于hexo源文件的迁移与部署
 date: 2018-04-17 07:40:49
 tags:
 ---
-### 为解决更换系统导致的hexo源文件的丢失，特采用以下方法
-> 本方法的核心为在GitHub的建站仓库上创建一个额外的分支来存放源文件。
+
+> 为解决更换系统导致的hexo源文件的丢失，特采用以下方法，本方法的核心为在GitHub的建站仓库上创建一个额外的分支来存放源文件。
 
 ### 一.初次搭建hexo静态博客
-1. 创建仓库：change-Y.gitHub.io；
+1. 创建仓库：[change-Y.gitHub.io](https://change-Y.gitHub.io)；
 2. 新建一个Readme（不然可能由于空仓库无法进行下边的新建分支操作）；
 3. 新建一个分支hexo用来存放hexo源文件，并设为默认分支（master用来存放静态页面，我们今后只需要对hexo分支进行操作即可）；
 4. 通过git clone 将change-Y.github.io克隆到本地；
-5. 在本地change-Y.github.io文件夹下执行hexo init、npm install 和 npm install hexo-deployer-git（在此步骤操作过程中可能会初始化hexo失败，提示change-Y.github.io不是空的文件夹，删了文件夹下隐藏的.git文件夹依然不可以，于是将.git文件夹备份，新建了一个空文件夹，待初始化完以后将.git放入文件夹。）；
+5. 在本地change-Y.github.io文件夹下执行`hexo init`、`npm install` 和 `npm install hexo-deployer-git`（在此步骤操作过程中可能会初始化hexo失败，提示change-Y.github.io不是空的文件夹，删了文件夹下隐藏的.git文件夹依然不可以，于是将.git文件夹备份，新建了一个空文件夹，待初始化完以后将.git放入文件夹。）；
 6. 修改_config.yml中的deploy参数，分支应为master，可在type参数下新建参数与branch: master(因为此前设置的hexo为默认分支)；
-7. 依次执行git add .、git commit -m "..."、git push origin hexo提交网站相关的文件；
-8. 执行hexo g -d生成网站并部署到GitHub上。
+7. 依次执行`git add .`、`git commit -m "..."`、`git push origin hexo`提交网站相关的文件；
+8. 执行`hexo g -d`生成网站并部署到GitHub上。
 
 ### 二.日常的改动流程
-1. 提交源文件到hexo分支，依次执行git add .、git commit -m "..."、git push origin hexo指令将改动推送到GitHub（此时当前分支应为hexo）；
-2. 部署hexo，hexo g -d
+1. 提交源文件到hexo分支，依次执行`git add .`、`git commit -m "..."`、`git push origin hexo`指令将改动推送到GitHub（此时当前分支应为hexo）；
+2. 部署`hexo，hexo g -d`
 
 ### 三、本地资料丢失后的流程
 1. 使用git clone git@github.com:change-Y/change-Y.github.io.git拷贝仓库（默认分支为hexo）；
-2. 在本地新拷贝的change-Y.github.io文件夹下通过Git bash依次执行下列指令：npm install hexo、npm install、npm install hexo-deployer-git（记得，不需要hexo init这条指令）。
+2. 在本地新拷贝的change-Y.github.io文件夹下通过Git bash依次执行下列指令：`bash npm install hexo`、`npm install`、`npm install hexo-deployer-git`（记得，不需要hexo init这条指令）。

@@ -77,6 +77,7 @@ theme: change
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
-deploy: git@github.com:change-Y/change-Y.github.io.git
-type: git
-branch: master
+deploy:
+ type: git
+ branch: master
+ repo: git@github.com:change-Y/change-Y.github.io.git
