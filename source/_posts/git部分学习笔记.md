@@ -1,7 +1,8 @@
 ---
-title: git部分学习笔记
+title: Git部分学习笔记
 date: 2018-04-18 13:15:11
-tags:
+tags: Git
+categories: Git
 ---
 
 ## Git随手记

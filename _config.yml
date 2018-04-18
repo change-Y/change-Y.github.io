@@ -81,3 +81,14 @@ deploy:
  type: git
  branch: master
  repo: git@github.com:change-Y/change-Y.github.io.git
+
+#localsearch
+search:
+  path: search.xml
+  field: post
+  format: html
+  limit: 10000
+
+#站点地图
+sitemap:
+    path: sitemap.xml
