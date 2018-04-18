@@ -478,7 +478,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-04-18 12:33:37" itemprop="dateModified" datetime="2018-04-18T12:33:37+08:00">2018-04-18</time>
+                <time title="Modified: 2018-04-18 12:51:30" itemprop="dateModified" datetime="2018-04-18T12:51:30+08:00">2018-04-18</time>
               
             
           </span>
@@ -517,22 +517,22 @@
 <p>为解决更换系统导致的hexo源文件的丢失，特采用以下方法，本方法的核心为在GitHub的建站仓库上创建一个额外的分支来存放源文件。</p>
 </blockquote>
 <h3 id="一-初次搭建hexo静态博客"><a href="#一-初次搭建hexo静态博客" class="headerlink" title="一.初次搭建hexo静态博客"></a>一.初次搭建hexo静态博客</h3><ol>
-<li>创建仓库：change-Y.gitHub.io；</li>
+<li>创建仓库：<a href="https://change-Y.gitHub.io" target="_blank" rel="noopener">change-Y.gitHub.io</a>；</li>
 <li>新建一个Readme（不然可能由于空仓库无法进行下边的新建分支操作）；</li>
 <li>新建一个分支hexo用来存放hexo源文件，并设为默认分支（master用来存放静态页面，我们今后只需要对hexo分支进行操作即可）；</li>
 <li>通过git clone 将change-Y.github.io克隆到本地；</li>
-<li>在本地change-Y.github.io文件夹下执行hexo init、npm install 和 npm install hexo-deployer-git（在此步骤操作过程中可能会初始化hexo失败，提示change-Y.github.io不是空的文件夹，删了文件夹下隐藏的.git文件夹依然不可以，于是将.git文件夹备份，新建了一个空文件夹，待初始化完以后将.git放入文件夹。）；</li>
+<li>在本地change-Y.github.io文件夹下执行<code>hexo init</code>、<code>npm install</code> 和 <code>npm install hexo-deployer-git</code>（在此步骤操作过程中可能会初始化hexo失败，提示change-Y.github.io不是空的文件夹，删了文件夹下隐藏的.git文件夹依然不可以，于是将.git文件夹备份，新建了一个空文件夹，待初始化完以后将.git放入文件夹。）；</li>
 <li>修改_config.yml中的deploy参数，分支应为master，可在type参数下新建参数与branch: master(因为此前设置的hexo为默认分支)；</li>
-<li>依次执行git add .、git commit -m “…”、git push origin hexo提交网站相关的文件；</li>
-<li>执行hexo g -d生成网站并部署到GitHub上。</li>
+<li>依次执行<code>git add .</code>、<code>git commit -m &quot;...&quot;</code>、<code>git push origin hexo</code>提交网站相关的文件；</li>
+<li>执行<code>hexo g -d</code>生成网站并部署到GitHub上。</li>
 </ol>
 <h3 id="二-日常的改动流程"><a href="#二-日常的改动流程" class="headerlink" title="二.日常的改动流程"></a>二.日常的改动流程</h3><ol>
-<li>提交源文件到hexo分支，依次执行git add .、git commit -m “…”、git push origin hexo指令将改动推送到GitHub（此时当前分支应为hexo）；</li>
-<li>部署hexo，hexo g -d</li>
+<li>提交源文件到hexo分支，依次执行<code>git add .</code>、<code>git commit -m &quot;...&quot;</code>、<code>git push origin hexo</code>指令将改动推送到GitHub（此时当前分支应为hexo）；</li>
+<li>部署<code>hexo，hexo g -d</code></li>
 </ol>
 <h3 id="三、本地资料丢失后的流程"><a href="#三、本地资料丢失后的流程" class="headerlink" title="三、本地资料丢失后的流程"></a>三、本地资料丢失后的流程</h3><ol>
 <li>使用git clone <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:change-Y/change-Y.github.io.git拷贝仓库（默认分支为hexo）；</li>
-<li>在本地新拷贝的change-Y.github.io文件夹下通过Git bash依次执行下列指令：npm install hexo、npm install、npm install hexo-deployer-git（记得，不需要hexo init这条指令）。</li>
+<li>在本地新拷贝的change-Y.github.io文件夹下通过Git bash依次执行下列指令：<code>bash npm install hexo</code>、<code>npm install</code>、<code>npm install hexo-deployer-git</code>（记得，不需要hexo init这条指令）。</li>
 </ol>
 
           
