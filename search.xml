@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[Hexo功能配置]]></title>
+    <url>%2F2018%2F04%2F18%2FHexo%E5%8A%9F%E8%83%BD%E9%85%8D%E7%BD%AE%2F</url>
+    <content type="text"><![CDATA[一、更换主题 下载主题，Next主题 放入theme文件夹修改配置文件theme: Next 关闭目录自动展开：修改主题配置文件sidebar-&gt;disply: hide 选择主题风格：修改Schemes 二、添加分类、标签、搜索等栏目 添加分类：hexo new page categories，会在source目录下生成categories文件夹，修改配置文件: 12345---title: date: 2017-05-02 22:27:12type: &quot;categories&quot;--- 即添加type: &quot;categories&quot;参数 添加标签：hexo new page tags 添加关于：hexo new page about 添加搜索：npm install hexo-generator-search --save，修改hexo配置文件，添加如下内容： 12345search: path: search.xml field: post format: html limit: 10000 修改主题配置文件： 12local_search: enable: true 添加站点地图：npm install hexo-generator-seo-friendly-sitemap --save，修改hexo配置文件： 12sitemap: path: sitemap.xml 修改主题配置文件： 1sitemap: /sitemap.xml || sitemap 添加RSS订阅：npm install hexo-generator-feed --save，修改主题配置文件rss: /atom.xml]]></content>
+      <categories>
+        <category>搭建博客</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Git部分学习笔记]]></title>
+    <url>%2F2018%2F04%2F18%2FGit%E9%83%A8%E5%88%86%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%2F</url>
+    <content type="text"><![CDATA[Git随手记一.git add .、git add -u、git add -A的区别 git add .：他会监控工作区的状态树，使用它会把工作时的所有变化提交到暂存区，包括文件内容修改(modified)以及新文件(new)，但不包括被删除的文件。—-git 1.x version git add -u：他仅监控已经被add的文件（即tracked file），他会将被修改的文件和删除的文件提交到暂存区。add -u 不会提交新文件（untracked file）。（git add –update的缩写） git add -A：是上面两个功能的合集（git add –all的缩写） 在git 2.x version后git add . = git add -A]]></content>
+      <categories>
+        <category>Git</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[关于hexo源文件的迁移与部署]]></title>
+    <url>%2F2018%2F04%2F17%2F%E5%85%B3%E4%BA%8Ehexo%E6%BA%90%E6%96%87%E4%BB%B6%E7%9A%84%E8%BF%81%E7%A7%BB%E4%B8%8E%E9%83%A8%E7%BD%B2%2F</url>
+    <content type="text"><![CDATA[为解决意外情况hexo源文件丢失的情况，采用在GitHub的建站仓库上创建一个额外的分支来存放源文件的方法。 一.初次搭建hexo静态博客 创建仓库：change-Y.gitHub.io； 新建一个Readme（不然可能由于空仓库无法进行下边的新建分支操作）； 新建一个分支hexo用来存放hexo源文件，并设为默认分支（master用来存放静态页面，我们今后只需要对hexo分支进行操作即可）； 通过git clone 将change-Y.github.io克隆到本地； 在本地change-Y.github.io文件夹下执行hexo init、npm install 和 npm install hexo-deployer-git（在此步骤操作过程中可能会初始化hexo失败，提示change-Y.github.io不是空的文件夹，删了文件夹下隐藏的.git文件夹依然不可以，于是将.git文件夹备份，新建了一个空文件夹，待初始化完以后将.git放入文件夹。）； 修改_config.yml中的deploy参数，分支应为master，可在type参数下新建参数与branch: master(因为此前设置的hexo为默认分支)； 依次执行git add .、git commit -m &quot;...&quot;、git push origin hexo提交网站相关的文件； 执行hexo g -d生成网站并部署到GitHub上。 二.日常的改动流程 提交源文件到hexo分支，依次执行git add .、git commit -m &quot;...&quot;、git push origin hexo指令将改动推送到GitHub（此时当前分支应为hexo）； 部署hexo，hexo g -d 三、本地资料丢失后的流程 使用git clone git@github.com:change-Y/change-Y.github.io.git拷贝仓库（默认分支为hexo）； 在本地新拷贝的change-Y.github.io文件夹下通过Git bash依次执行下列指令：bash npm install hexo、npm install、npm install hexo-deployer-git（记得，不需要hexo init这条指令）。 部分内容摘自知乎CrazyMilk的回答，感谢！]]></content>
+      <categories>
+        <category>搭建博客</category>
+      </categories>
+      <tags>
+        <tag>博客</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Markdown简单用法]]></title>
+    <url>%2F2017%2F05%2F02%2FMarkdown%E7%AE%80%E5%8D%95%E7%94%A8%E6%B3%95%2F</url>
+    <content type="text"><![CDATA[12345678用法与规则：您可以手动输入 Markdown 符号。### 标题使用“#”加空格在行首来创建标题例如：# 一级标题## 二级标题### 三级标题 1234567891011121314151617181920212223242526### 加粗功能使用一组星号“**”或一组下划线“__”来加粗一段文字例如：这是**加粗的文字**这也是__加粗的文字__### 居中使用一对中括号“[文字]”来居中一段文字，也可以和标题叠加使用例如：[### 这是一个居中的标题]### 引用使用“&gt;”在段首来引用一段文字例如：&gt; 这是一段引用&gt; 这是一段引用### 无序列表使用“-”、“*”或“+”加空格来创建无序列表例如：- 这是一个无序列表+ 这是一个无序列表* 这是一个无序列表### 有序列表使用数字圆点加空格如“1.”、“2.”来创建有序列表例如：1. 这是一个有序列表2. 这是一个有序列表3. 这是一个有序列表]]></content>
+      <categories>
+        <category>Markdown</category>
+      </categories>
+      <tags>
+        <tag>Markdown</tag>
+      </tags>
+  </entry>
+</search>
