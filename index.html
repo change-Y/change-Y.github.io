@@ -271,7 +271,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/17/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/18/git部分学习笔记/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -290,8 +290,8 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/04/17/hello-world/" itemprop="url">
-                  Hello World
+                <a class="post-title-link" href="/2018/04/18/git部分学习笔记/" itemprop="url">
+                  git部分学习笔记
                 </a>
               
             
@@ -317,9 +317,13 @@
                 
               
 
-              <time title="Created: 2018-04-17 16:45:42" itemprop="dateCreated datePublished" datetime="2018-04-17T16:45:42+08:00">2018-04-17</time>
+              <time title="Created: 2018-04-18 13:15:11 / Modified: 13:29:28" itemprop="dateCreated datePublished" datetime="2018-04-18T13:15:11+08:00">2018-04-18</time>
             
 
+            
+              
+
+              
             
           </span>
 
@@ -353,15 +357,12 @@
       
         
           
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+            <h2 id="Git随手记"><a href="#Git随手记" class="headerlink" title="Git随手记"></a>Git随手记</h2><h3 id="一-git-add-、git-add-u、git-add-A的区别"><a href="#一-git-add-、git-add-u、git-add-A的区别" class="headerlink" title="一.git add .、git add -u、git add -A的区别"></a>一.<code>git add .</code>、<code>git add -u</code>、<code>git add -A</code>的区别</h3><ul>
+<li><code>git add .</code>：他会监控工作区的状态树，使用它会把工作时的所有变化提交到暂存区，包括<strong>文件内容修改</strong>(modified)以及<strong>新文件</strong>(new)，但不包括被删除的文件。—-<em>git 1.x version</em></li>
+<li><code>git add -u</code>：他仅监控<em>已经被add的文件</em>（即tracked file），他会将被<strong>修改的文件</strong>和<strong>删除的文件</strong>提交到暂存区。add -u 不会提交新文件（untracked file）。（git add –update的缩写）</li>
+<li><code>git add -A</code>：是上面两个功能的合集（git add –all的缩写）</li>
+<li>在<em>git 2.x version</em>后<code>git add .</code> = <code>git add -A</code></li>
+</ul>
 
           
         
@@ -478,7 +479,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-04-18 12:51:30" itemprop="dateModified" datetime="2018-04-18T12:51:30+08:00">2018-04-18</time>
+                <time title="Modified: 2018-04-18 13:40:11" itemprop="dateModified" datetime="2018-04-18T13:40:11+08:00">2018-04-18</time>
               
             
           </span>
@@ -534,6 +535,8 @@
 <li>使用git clone <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:change-Y/change-Y.github.io.git拷贝仓库（默认分支为hexo）；</li>
 <li>在本地新拷贝的change-Y.github.io文件夹下通过Git bash依次执行下列指令：<code>bash npm install hexo</code>、<code>npm install</code>、<code>npm install hexo-deployer-git</code>（记得，不需要hexo init这条指令）。</li>
 </ol>
+<hr>
+<p>部分内容摘自知乎<a href="https://www.zhihu.com/question/21193762" target="_blank" rel="noopener">CrazyMilk的回答</a>，感谢！</p>
 
           
         

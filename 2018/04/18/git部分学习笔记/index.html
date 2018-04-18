@@ -99,24 +99,24 @@
 
 
 
-  <meta name="description" content="为解决更换系统导致的hexo源文件的丢失，特采用以下方法，本方法的核心为在GitHub的建站仓库上创建一个额外的分支来存放源文件。  一.初次搭建hexo静态博客 创建仓库：change-Y.gitHub.io； 新建一个Readme（不然可能由于空仓库无法进行下边的新建分支操作）； 新建一个分支hexo用来存放hexo源文件，并设为默认分支（master用来存放静态页面，我们今后只需要对hex">
+  <meta name="description" content="Git随手记一.git add .、git add -u、git add -A的区别 git add .：他会监控工作区的状态树，使用它会把工作时的所有变化提交到暂存区，包括文件内容修改(modified)以及新文件(new)，但不包括被删除的文件。—-git 1.x version git add -u：他仅监控已经被add的文件（即tracked file），他会将被修改的文件和删除的文件提交">
 <meta property="og:type" content="article">
-<meta property="og:title" content="关于hexo源文件的迁移与部署">
-<meta property="og:url" content="http://yoursite.com/2018/04/17/关于hexo源文件的迁移与部署/index.html">
+<meta property="og:title" content="git部分学习笔记">
+<meta property="og:url" content="http://yoursite.com/2018/04/18/git部分学习笔记/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="为解决更换系统导致的hexo源文件的丢失，特采用以下方法，本方法的核心为在GitHub的建站仓库上创建一个额外的分支来存放源文件。  一.初次搭建hexo静态博客 创建仓库：change-Y.gitHub.io； 新建一个Readme（不然可能由于空仓库无法进行下边的新建分支操作）； 新建一个分支hexo用来存放hexo源文件，并设为默认分支（master用来存放静态页面，我们今后只需要对hex">
+<meta property="og:description" content="Git随手记一.git add .、git add -u、git add -A的区别 git add .：他会监控工作区的状态树，使用它会把工作时的所有变化提交到暂存区，包括文件内容修改(modified)以及新文件(new)，但不包括被删除的文件。—-git 1.x version git add -u：他仅监控已经被add的文件（即tracked file），他会将被修改的文件和删除的文件提交">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-04-18T05:40:11.000Z">
+<meta property="og:updated_time" content="2018-04-18T05:29:28.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于hexo源文件的迁移与部署">
-<meta name="twitter:description" content="为解决更换系统导致的hexo源文件的丢失，特采用以下方法，本方法的核心为在GitHub的建站仓库上创建一个额外的分支来存放源文件。  一.初次搭建hexo静态博客 创建仓库：change-Y.gitHub.io； 新建一个Readme（不然可能由于空仓库无法进行下边的新建分支操作）； 新建一个分支hexo用来存放hexo源文件，并设为默认分支（master用来存放静态页面，我们今后只需要对hex">
+<meta name="twitter:title" content="git部分学习笔记">
+<meta name="twitter:description" content="Git随手记一.git add .、git add -u、git add -A的区别 git add .：他会监控工作区的状态树，使用它会把工作时的所有变化提交到暂存区，包括文件内容修改(modified)以及新文件(new)，但不包括被删除的文件。—-git 1.x version git add -u：他仅监控已经被add的文件（即tracked file），他会将被修改的文件和删除的文件提交">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/04/17/关于hexo源文件的迁移与部署/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/04/18/git部分学习笔记/"/>
 
 
 
@@ -126,7 +126,7 @@
   };
 </script>
 
-  <title>关于hexo源文件的迁移与部署 | Hexo</title>
+  <title>git部分学习笔记 | Hexo</title>
   
 
 
@@ -274,7 +274,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/17/关于hexo源文件的迁移与部署/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/18/git部分学习笔记/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -291,7 +291,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">关于hexo源文件的迁移与部署
+          <h1 class="post-title" itemprop="name headline">git部分学习笔记
               
             
           </h1>
@@ -316,24 +316,12 @@
                 
               
 
-              <time title="Created: 2018-04-17 07:40:49" itemprop="dateCreated datePublished" datetime="2018-04-17T07:40:49+08:00">2018-04-17</time>
+              <time title="Created: 2018-04-18 13:15:11 / Modified: 13:29:28" itemprop="dateCreated datePublished" datetime="2018-04-18T13:15:11+08:00">2018-04-18</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2018-04-18 13:40:11" itemprop="dateModified" datetime="2018-04-18T13:40:11+08:00">2018-04-18</time>
               
             
           </span>
@@ -366,29 +354,12 @@
       
 
       
-        <blockquote>
-<p>为解决更换系统导致的hexo源文件的丢失，特采用以下方法，本方法的核心为在GitHub的建站仓库上创建一个额外的分支来存放源文件。</p>
-</blockquote>
-<h3 id="一-初次搭建hexo静态博客"><a href="#一-初次搭建hexo静态博客" class="headerlink" title="一.初次搭建hexo静态博客"></a>一.初次搭建hexo静态博客</h3><ol>
-<li>创建仓库：<a href="https://change-Y.gitHub.io" target="_blank" rel="noopener">change-Y.gitHub.io</a>；</li>
-<li>新建一个Readme（不然可能由于空仓库无法进行下边的新建分支操作）；</li>
-<li>新建一个分支hexo用来存放hexo源文件，并设为默认分支（master用来存放静态页面，我们今后只需要对hexo分支进行操作即可）；</li>
-<li>通过git clone 将change-Y.github.io克隆到本地；</li>
-<li>在本地change-Y.github.io文件夹下执行<code>hexo init</code>、<code>npm install</code> 和 <code>npm install hexo-deployer-git</code>（在此步骤操作过程中可能会初始化hexo失败，提示change-Y.github.io不是空的文件夹，删了文件夹下隐藏的.git文件夹依然不可以，于是将.git文件夹备份，新建了一个空文件夹，待初始化完以后将.git放入文件夹。）；</li>
-<li>修改_config.yml中的deploy参数，分支应为master，可在type参数下新建参数与branch: master(因为此前设置的hexo为默认分支)；</li>
-<li>依次执行<code>git add .</code>、<code>git commit -m &quot;...&quot;</code>、<code>git push origin hexo</code>提交网站相关的文件；</li>
-<li>执行<code>hexo g -d</code>生成网站并部署到GitHub上。</li>
-</ol>
-<h3 id="二-日常的改动流程"><a href="#二-日常的改动流程" class="headerlink" title="二.日常的改动流程"></a>二.日常的改动流程</h3><ol>
-<li>提交源文件到hexo分支，依次执行<code>git add .</code>、<code>git commit -m &quot;...&quot;</code>、<code>git push origin hexo</code>指令将改动推送到GitHub（此时当前分支应为hexo）；</li>
-<li>部署<code>hexo，hexo g -d</code></li>
-</ol>
-<h3 id="三、本地资料丢失后的流程"><a href="#三、本地资料丢失后的流程" class="headerlink" title="三、本地资料丢失后的流程"></a>三、本地资料丢失后的流程</h3><ol>
-<li>使用git clone <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:change-Y/change-Y.github.io.git拷贝仓库（默认分支为hexo）；</li>
-<li>在本地新拷贝的change-Y.github.io文件夹下通过Git bash依次执行下列指令：<code>bash npm install hexo</code>、<code>npm install</code>、<code>npm install hexo-deployer-git</code>（记得，不需要hexo init这条指令）。</li>
-</ol>
-<hr>
-<p>部分内容摘自知乎<a href="https://www.zhihu.com/question/21193762" target="_blank" rel="noopener">CrazyMilk的回答</a>，感谢！</p>
+        <h2 id="Git随手记"><a href="#Git随手记" class="headerlink" title="Git随手记"></a>Git随手记</h2><h3 id="一-git-add-、git-add-u、git-add-A的区别"><a href="#一-git-add-、git-add-u、git-add-A的区别" class="headerlink" title="一.git add .、git add -u、git add -A的区别"></a>一.<code>git add .</code>、<code>git add -u</code>、<code>git add -A</code>的区别</h3><ul>
+<li><code>git add .</code>：他会监控工作区的状态树，使用它会把工作时的所有变化提交到暂存区，包括<strong>文件内容修改</strong>(modified)以及<strong>新文件</strong>(new)，但不包括被删除的文件。—-<em>git 1.x version</em></li>
+<li><code>git add -u</code>：他仅监控<em>已经被add的文件</em>（即tracked file），他会将被<strong>修改的文件</strong>和<strong>删除的文件</strong>提交到暂存区。add -u 不会提交新文件（untracked file）。（git add –update的缩写）</li>
+<li><code>git add -A</code>：是上面两个功能的合集（git add –all的缩写）</li>
+<li>在<em>git 2.x version</em>后<code>git add .</code> = <code>git add -A</code></li>
+</ul>
 
       
     </div>
@@ -416,15 +387,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/04/17/关于hexo源文件的迁移与部署/" rel="next" title="关于hexo源文件的迁移与部署">
+                <i class="fa fa-chevron-left"></i> 关于hexo源文件的迁移与部署
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/04/18/git部分学习笔记/" rel="prev" title="git部分学习笔记">
-                git部分学习笔记 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -538,7 +509,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一-初次搭建hexo静态博客"><span class="nav-number">1.</span> <span class="nav-text">一.初次搭建hexo静态博客</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二-日常的改动流程"><span class="nav-number">2.</span> <span class="nav-text">二.日常的改动流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、本地资料丢失后的流程"><span class="nav-number">3.</span> <span class="nav-text">三、本地资料丢失后的流程</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Git随手记"><span class="nav-number">1.</span> <span class="nav-text">Git随手记</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一-git-add-、git-add-u、git-add-A的区别"><span class="nav-number">1.1.</span> <span class="nav-text">一.git add .、git add -u、git add -A的区别</span></a></li></ol></li></ol></div>
             
 
           </div>
