@@ -6,7 +6,7 @@ categories: 搭建博客
 ---
 
 ### 一、更换主题
-* 下载主题，[Next主题](https://github.com/theme-next/hexo-theme-next)
+* 下载主题，[Next主题](http://theme-next.iissnan.com/getting-started.html)
 * 放入theme文件夹修改配置文件theme: Next
 * 关闭目录自动展开：修改主题配置文件sidebar->disply: hide
 * 选择主题风格：修改Schemes  
