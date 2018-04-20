@@ -7,6 +7,22 @@
     </url>
 
     <url>
+        <loc>http://yoursite.com/2018/04/18/Hexo%E5%8A%9F%E8%83%BD%E9%85%8D%E7%BD%AE/</loc>
+        <lastmod>2018-04-20T05:25:35.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/04/18/Git%E9%83%A8%E5%88%86%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
+        <lastmod>2018-04-19T12:25:05.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://yoursite.com/2018/04/19/%E6%83%A0%E6%99%AEr221tx-%E5%AE%89%E8%A3%85high-sierra-10-13-4/</loc>
         <lastmod>2018-04-19T01:35:35.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -15,24 +31,8 @@
     </url>
 
     <url>
-        <loc>http://yoursite.com/2018/04/18/Hexo%E5%8A%9F%E8%83%BD%E9%85%8D%E7%BD%AE/</loc>
-        <lastmod>2018-04-19T00:14:10.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>http://yoursite.com/2018/04/19/hexo-%E5%B0%8F%E6%8A%80%E5%B7%A7/</loc>
         <lastmod>2018-04-18T23:51:36.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/2018/04/18/Git%E9%83%A8%E5%88%86%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
-        <lastmod>2018-04-18T14:42:09.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

@@ -32,13 +32,13 @@
         <category>搭建博客</category>
       </categories>
       <tags>
-        <tag>hexo</tag>
+        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
     <title><![CDATA[Git部分学习笔记]]></title>
     <url>%2F2018%2F04%2F18%2FGit%E9%83%A8%E5%88%86%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%2F</url>
-    <content type="text"><![CDATA[Git随手记一.git add .、git add -u、git add -A的区别 git add .：他会监控工作区的状态树，使用它会把工作时的所有变化提交到暂存区，包括文件内容修改(modified)以及新文件(new)，但不包括被删除的文件。—-git 1.x version git add -u：他仅监控已经被add的文件（即tracked file），他会将被修改的文件和删除的文件提交到暂存区。add -u 不会提交新文件（untracked file）。（git add –update的缩写） git add -A：是上面两个功能的合集（git add –all的缩写） 在git 2.x version后git add . = git add -A]]></content>
+    <content type="text"><![CDATA[Git随手记一.git add .、git add -u、git add -A的区别 git add .：他会监控工作区的状态树，使用它会把工作时的所有变化提交到暂存区，包括文件内容修改(modified)以及新文件(new)，但不包括被删除的文件。—-git 1.x version git add -u：他仅监控已经被add的文件（即tracked file），他会将被修改的文件和删除的文件提交到暂存区。add -u 不会提交新文件（untracked file）。（git add –update的缩写） git add -A：是上面两个功能的合集（git add –all的缩写） 在git 2.x version后git add . = git add -A git commit -am &quot;···&quot;是git add .和git commit -m &quot;···&quot;的结合体，但只能提交已经追踪过的文件，即只能提交修改不能提交增加。]]></content>
       <categories>
         <category>Git</category>
       </categories>

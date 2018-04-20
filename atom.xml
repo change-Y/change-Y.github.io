@@ -9,11 +9,6 @@
   <updated>2018-04-18T23:51:36.000Z</updated>
   <id>http://yoursite.com/</id>
   
-  <author>
-    <name>Change</name>
-    
-  </author>
-  
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
@@ -79,7 +74,7 @@
     <link href="http://yoursite.com/2018/04/18/Hexo%E5%8A%9F%E8%83%BD%E9%85%8D%E7%BD%AE/"/>
     <id>http://yoursite.com/2018/04/18/Hexo功能配置/</id>
     <published>2018-04-18T13:37:16.000Z</published>
-    <updated>2018-04-19T00:14:10.000Z</updated>
+    <updated>2018-04-20T05:25:35.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="一、更换主题"><a href="#一、更换主题" class="headerlink" title="一、更换主题"></a>一、更换主题</h3><ul><li>下载主题，<a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="noopener">Next主题</a></li><li>放入theme文件夹修改配置文件theme: Next</li><li>关闭目录自动展开：修改主题配置文件sidebar-&gt;disply: hide</li><li>选择主题风格：修改Schemes  </li></ul><h3 id="二、添加分类、标签、搜索等栏目"><a href="#二、添加分类、标签、搜索等栏目" class="headerlink" title="二、添加分类、标签、搜索等栏目"></a>二、添加分类、标签、搜索等栏目</h3><ul><li><strong>添加分类</strong>：<code>hexo new page categories</code>，会在source目录下生成categories文件夹，修改配置文件:</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: </span><br><span class="line">date: 2017-05-02 22:27:12</span><br><span class="line">type: &quot;categories&quot;</span><br><span class="line">---</span><br></pre></td></tr></table></figure><p>即添加<code>type: &quot;categories&quot;</code>参数</p><ul><li><strong>添加标签</strong>：<code>hexo new page tags</code></li><li><strong>添加关于</strong>：<code>hexo new page about</code></li><li><strong>添加搜索</strong>：<code>npm install hexo-generator-search --save</code>，修改hexo配置文件，添加如下内容：</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">search:</span><br><span class="line">  path: search.xml</span><br><span class="line">  field: post</span><br><span class="line">  format: html</span><br><span class="line">  limit: 10000</span><br></pre></td></tr></table></figure><p>修改主题配置文件：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">local_search:</span><br><span class="line">  enable: true</span><br></pre></td></tr></table></figure><ul><li>添加站点地图：<code>npm install hexo-generator-seo-friendly-sitemap --save</code>，修改hexo配置文件：</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sitemap:</span><br><span class="line">    path: sitemap.xml</span><br></pre></td></tr></table></figure><p>修改主题配置文件：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sitemap: /sitemap.xml || sitemap</span><br></pre></td></tr></table></figure><ul><li>添加RSS订阅：<code>npm install hexo-generator-feed --save</code>，修改主题配置文件<code>rss:  /atom.xml</code></li></ul>]]></content>
     
@@ -96,7 +91,7 @@
       <category term="搭建博客" scheme="http://yoursite.com/categories/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/"/>
     
     
-      <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
+      <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
     
   </entry>
   
@@ -105,9 +100,9 @@
     <link href="http://yoursite.com/2018/04/18/Git%E9%83%A8%E5%88%86%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     <id>http://yoursite.com/2018/04/18/Git部分学习笔记/</id>
     <published>2018-04-18T05:15:11.000Z</published>
-    <updated>2018-04-18T14:42:09.000Z</updated>
+    <updated>2018-04-19T12:25:05.000Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="Git随手记"><a href="#Git随手记" class="headerlink" title="Git随手记"></a>Git随手记</h2><h3 id="一-git-add-、git-add-u、git-add-A的区别"><a href="#一-git-add-、git-add-u、git-add-A的区别" class="headerlink" title="一.git add .、git add -u、git add -A的区别"></a>一.<code>git add .</code>、<code>git add -u</code>、<code>git add -A</code>的区别</h3><ul><li><code>git add .</code>：他会监控工作区的状态树，使用它会把工作时的所有变化提交到暂存区，包括<strong>文件内容修改</strong>(modified)以及<strong>新文件</strong>(new)，但不包括被删除的文件。—-<em>git 1.x version</em></li><li><code>git add -u</code>：他仅监控<em>已经被add的文件</em>（即tracked file），他会将被<strong>修改的文件</strong>和<strong>删除的文件</strong>提交到暂存区。add -u 不会提交新文件（untracked file）。（git add –update的缩写）</li><li><code>git add -A</code>：是上面两个功能的合集（git add –all的缩写）</li><li>在<em>git 2.x version</em>后<code>git add .</code> = <code>git add -A</code></li></ul>]]></content>
+    <content type="html"><![CDATA[<h2 id="Git随手记"><a href="#Git随手记" class="headerlink" title="Git随手记"></a>Git随手记</h2><h3 id="一-git-add-、git-add-u、git-add-A的区别"><a href="#一-git-add-、git-add-u、git-add-A的区别" class="headerlink" title="一.git add .、git add -u、git add -A的区别"></a>一.<code>git add .</code>、<code>git add -u</code>、<code>git add -A</code>的区别</h3><ul><li><code>git add .</code>：他会监控工作区的状态树，使用它会把工作时的所有变化提交到暂存区，包括<strong>文件内容修改</strong>(modified)以及<strong>新文件</strong>(new)，但不包括被删除的文件。—-<em>git 1.x version</em></li><li><code>git add -u</code>：他仅监控<em>已经被add的文件</em>（即tracked file），他会将被<strong>修改的文件</strong>和<strong>删除的文件</strong>提交到暂存区。add -u 不会提交新文件（untracked file）。（git add –update的缩写）</li><li><code>git add -A</code>：是上面两个功能的合集（git add –all的缩写）</li><li>在<em>git 2.x version</em>后<code>git add .</code> = <code>git add -A</code></li><li><code>git commit -am &quot;···&quot;</code>是<code>git add .</code>和g<code>it commit -m &quot;···&quot;</code>的结合体，但只能提交已经追踪过的文件，即只能提交修改不能提交增加。</li></ul>]]></content>
     
     <summary type="html">
     
