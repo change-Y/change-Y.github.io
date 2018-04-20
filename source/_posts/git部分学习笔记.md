@@ -11,3 +11,4 @@ categories: Git
 - `git add -u`：他仅监控*已经被add的文件*（即tracked file），他会将被**修改的文件**和**删除的文件**提交到暂存区。add -u 不会提交新文件（untracked file）。（git add --update的缩写）
 - `git add -A`：是上面两个功能的合集（git add --all的缩写）
 - 在*git 2.x version*后`git add .` = `git add -A`
+- `git commit -am "···"`是`git add .`和g`it commit -m "···"`的结合体，但只能提交已经追踪过的文件，即只能提交修改不能提交增加。
