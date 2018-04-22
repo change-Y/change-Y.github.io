@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[MAC实用技巧]]></title>
+    <url>%2F2018%2F04%2F22%2FMAC%E5%AE%9E%E7%94%A8%E6%8A%80%E5%B7%A7%2F</url>
+    <content type="text"><![CDATA[MAC下的技巧太多太多，这里只整理一些平时比较常用的来提高工作效率 快捷键 Cmd + Shift + .：显示隐藏Finder文件 。 Cmd + Option + V：相当于剪切粘贴。 Cmd + Tab ：切换不同应用。 Cmd + ~：切换当前应用不同窗口。 Cmd + I：显示简介。 Cmd + Q：退出当前程序。 Cmd + ↑：回到顶端。 Cmd + ↓：到最底端。 Cmd + 拖动：状态栏上的图标排序和删除。 Cmd + 拖动：可以在不激活的同时拖动非焦点窗口。 Cmd + Shift + S：另存为文件。 Cmd + Option + Delete：永久删除。 Ctrl + ↑：预览所有应用窗口。 Ctrl + ↓：预览当前应用窗口。 Ctrl + ←：上一个Space。 Ctrl + →：下一个Space Ctrl + Space ：打开搜索项所在目录的快捷键是选蓝后按 Cmd + Enter 。 Ctrl + Cmd + Space：输入emoji，图片字符，特殊符号。 在预览中启用放大镜：~。 选中文件时点击空格实现预览，按着option点空格全屏预览，包括各种文件。 大多数win下的快捷键把Ctrl换为Cmd即可。 隐藏的功能 分屏：长按左上角全屏的绿色按钮即可。 跳过百度云大文件检测：Safari开发选项中使用win下的浏览器代理。 归类文件：选中多个文件右键选择使用多个文件新建文件夹。 MD5校验，终端：MD5 文件名。 未完待续。。。]]></content>
+      <categories>
+        <category>MAC</category>
+      </categories>
+      <tags>
+        <tag>MAC</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Hexo 小技巧]]></title>
     <url>%2F2018%2F04%2F19%2Fhexo-%E5%B0%8F%E6%8A%80%E5%B7%A7%2F</url>
     <content type="text"><![CDATA[文章设置多标签：tags: [标签1,标签2，···]]]></content>

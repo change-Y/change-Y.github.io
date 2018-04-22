@@ -6,10 +6,41 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-04-18T23:51:36.000Z</updated>
+  <updated>2018-04-22T09:06:56.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>MAC实用技巧</title>
+    <link href="http://yoursite.com/2018/04/22/MAC%E5%AE%9E%E7%94%A8%E6%8A%80%E5%B7%A7/"/>
+    <id>http://yoursite.com/2018/04/22/MAC实用技巧/</id>
+    <published>2018-04-22T07:50:44.000Z</published>
+    <updated>2018-04-22T09:06:56.000Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>MAC下的技巧太多太多，这里只整理一些平时比较常用的来提高工作效率</p></blockquote><ul><li>快捷键<ul><li><code>Cmd + Shift + .</code>：显示隐藏Finder文件 。</li><li><code>Cmd + Option + V</code>：相当于剪切粘贴。</li><li><code>Cmd + Tab</code> ：切换不同应用。</li><li><code>Cmd + ~</code>：切换当前应用不同窗口。</li><li><code>Cmd + I</code>：显示简介。</li><li><code>Cmd + Q</code>：退出当前程序。</li><li><code>Cmd + ↑</code>：回到顶端。</li><li><code>Cmd + ↓</code>：到最底端。</li><li><code>Cmd + 拖动</code>：状态栏上的图标排序和删除。</li><li><code>Cmd + 拖动</code>：可以在不激活的同时拖动非焦点窗口。</li><li><code>Cmd + Shift + S</code>：另存为文件。</li><li><code>Cmd + Option + Delete</code>：永久删除。</li><li><code>Ctrl + ↑</code>：预览所有应用窗口。</li><li><code>Ctrl + ↓</code>：预览当前应用窗口。</li><li><code>Ctrl + ←</code>：上一个Space。</li><li><code>Ctrl + →</code>：下一个Space</li><li><code>Ctrl + Space</code> ：打开搜索项所在目录的快捷键是选蓝后按 Cmd + Enter 。</li><li><code>Ctrl + Cmd + Space</code>：输入emoji，图片字符，特殊符号。</li><li>在预览中启用放大镜：<code>~</code>。</li><li>选中文件时点击空格实现预览，按着option点空格全屏预览，包括各种文件。</li><li>大多数win下的快捷键把Ctrl换为Cmd即可。</li></ul></li></ul><ul><li>隐藏的功能<ul><li>分屏：长按左上角全屏的绿色按钮即可。</li><li>跳过百度云大文件检测：Safari开发选项中使用win下的浏览器代理。</li><li>归类文件：选中多个文件右键选择使用多个文件新建文件夹。</li><li>MD5校验，终端：<code>MD5 文件名</code>。</li><li>未完待续。。。</li></ul></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;MAC下的技巧太多太多，这里只整理一些平时比较常用的来提高工作效率&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;快捷键&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Cmd + Shift + .&lt;/code&gt;：显示隐藏Finder文件 。&lt;/li&gt;
+&lt;l
+      
+    
+    </summary>
+    
+      <category term="MAC" scheme="http://yoursite.com/categories/MAC/"/>
+    
+    
+      <category term="MAC" scheme="http://yoursite.com/tags/MAC/"/>
+    
+  </entry>
   
   <entry>
     <title>Hexo 小技巧</title>
