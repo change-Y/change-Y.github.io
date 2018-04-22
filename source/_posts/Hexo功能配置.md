@@ -1,7 +1,7 @@
 ---
 title: Hexo功能配置
 date: 2018-04-18 21:37:16
-tags: Hexo
+tags: hexo
 categories: 搭建博客
 ---
 
