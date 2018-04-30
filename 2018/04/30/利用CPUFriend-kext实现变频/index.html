@@ -99,18 +99,18 @@
 
 
 
-  <meta name="description" content="一、下载镜像 这里使用黑果小兵镜像10.13.4   二、镜像写入U盘 在win下使用transmac写入镜像，先格式化为hfs格式，在选择镜像写入（注意transmac要以管理员身份运行）  三、修改BIOS 关闭安全启动 选择U盘启动方式 进入安装界面 选择-V启动，如果卡++++，更换OsxAptioFixDrv-64.efi 卡Service only ran for 0 seconds.">
-<meta name="keywords" content="Hackintosh,黑苹果">
+  <meta name="description" content="黑苹果CPU的变频受多重因素的影响，如SMBIOS机型、电源管理、x86驱动是否加载等，本机在安装10.13.4后，电源管理正常，x86正常加载，为解决开机卡顿的问题改了MP9.1的机型，但是变频不正常，最低档位1000，最高档位2700，导致温度有时较高，在采用了CPUFried后变频有所改进，最低档800，最高2200，但这种变频变频也有所牺牲，档位只有四个，并且电源管理面板也不完善。  原">
+<meta name="keywords" content="变频">
 <meta property="og:type" content="article">
-<meta property="og:title" content="惠普r221tx 安装high sierra 10.13.4">
-<meta property="og:url" content="http://yoursite.com/2018/04/19/惠普r221tx-安装high-sierra-10-13-4/index.html">
+<meta property="og:title" content="利用CPUFriend.kext实现变频">
+<meta property="og:url" content="http://yoursite.com/2018/04/30/利用CPUFriend-kext实现变频/index.html">
 <meta property="og:site_name" content="Change">
-<meta property="og:description" content="一、下载镜像 这里使用黑果小兵镜像10.13.4   二、镜像写入U盘 在win下使用transmac写入镜像，先格式化为hfs格式，在选择镜像写入（注意transmac要以管理员身份运行）  三、修改BIOS 关闭安全启动 选择U盘启动方式 进入安装界面 选择-V启动，如果卡++++，更换OsxAptioFixDrv-64.efi 卡Service only ran for 0 seconds.">
+<meta property="og:description" content="黑苹果CPU的变频受多重因素的影响，如SMBIOS机型、电源管理、x86驱动是否加载等，本机在安装10.13.4后，电源管理正常，x86正常加载，为解决开机卡顿的问题改了MP9.1的机型，但是变频不正常，最低档位1000，最高档位2700，导致温度有时较高，在采用了CPUFried后变频有所改进，最低档800，最高2200，但这种变频变频也有所牺牲，档位只有四个，并且电源管理面板也不完善。  原">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-04-19T01:35:35.000Z">
+<meta property="og:updated_time" content="2018-04-30T12:41:08.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="惠普r221tx 安装high sierra 10.13.4">
-<meta name="twitter:description" content="一、下载镜像 这里使用黑果小兵镜像10.13.4   二、镜像写入U盘 在win下使用transmac写入镜像，先格式化为hfs格式，在选择镜像写入（注意transmac要以管理员身份运行）  三、修改BIOS 关闭安全启动 选择U盘启动方式 进入安装界面 选择-V启动，如果卡++++，更换OsxAptioFixDrv-64.efi 卡Service only ran for 0 seconds.">
+<meta name="twitter:title" content="利用CPUFriend.kext实现变频">
+<meta name="twitter:description" content="黑苹果CPU的变频受多重因素的影响，如SMBIOS机型、电源管理、x86驱动是否加载等，本机在安装10.13.4后，电源管理正常，x86正常加载，为解决开机卡顿的问题改了MP9.1的机型，但是变频不正常，最低档位1000，最高档位2700，导致温度有时较高，在采用了CPUFried后变频有所改进，最低档800，最高2200，但这种变频变频也有所牺牲，档位只有四个，并且电源管理面板也不完善。  原">
 
 
 
@@ -119,7 +119,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/04/19/惠普r221tx-安装high-sierra-10-13-4/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/04/30/利用CPUFriend-kext实现变频/"/>
 
 
 
@@ -129,7 +129,7 @@
   };
 </script>
 
-  <title>惠普r221tx 安装high sierra 10.13.4 | Change</title>
+  <title>利用CPUFriend.kext实现变频 | Change</title>
   
 
 
@@ -332,7 +332,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/19/惠普r221tx-安装high-sierra-10-13-4/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/30/利用CPUFriend-kext实现变频/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="">
@@ -349,7 +349,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">惠普r221tx 安装high sierra 10.13.4
+          <h1 class="post-title" itemprop="name headline">利用CPUFriend.kext实现变频
               
             
           </h1>
@@ -374,7 +374,7 @@
                 
               
 
-              <time title="创建时间：2018-04-19 07:39:14 / 修改时间：09:35:35" itemprop="dateCreated datePublished" datetime="2018-04-19T07:39:14+08:00">2018-04-19</time>
+              <time title="创建时间：2018-04-30 18:08:14 / 修改时间：20:41:08" itemprop="dateCreated datePublished" datetime="2018-04-30T18:08:14+08:00">2018-04-30</time>
             
 
             
@@ -432,7 +432,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">1.1k</span>
+                <span title="本文字数">650</span>
               
 
               
@@ -446,7 +446,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">3 分钟</span>
+                <span title="阅读时长">2 分钟</span>
               
             </div>
           
@@ -466,36 +466,17 @@
       
 
       
-        <h3 id="一、下载镜像"><a href="#一、下载镜像" class="headerlink" title="一、下载镜像"></a>一、下载镜像</h3><ul>
-<li>这里使用黑果小兵镜像<a href="https://blog.daliansky.net/macOS-High-Sierra-10.13.4-17E199-Release-Version-and-Clover-4418-Original-Image.html#more" target="_blank" rel="noopener">10.13.4</a> </li>
-</ul>
-<h3 id="二、镜像写入U盘"><a href="#二、镜像写入U盘" class="headerlink" title="二、镜像写入U盘"></a>二、镜像写入U盘</h3><ul>
-<li>在win下使用<a href="http://bbs.pcbeta.com/forum.php?mod=viewthread&amp;tid=1768303&amp;highlight=transmac" target="_blank" rel="noopener">transmac</a>写入镜像，先格式化为hfs格式，在选择镜像写入（注意transmac要以管理员身份运行）</li>
-</ul>
-<h3 id="三、修改BIOS"><a href="#三、修改BIOS" class="headerlink" title="三、修改BIOS"></a>三、修改BIOS</h3><ul>
-<li><strong>关闭安全启动</strong></li>
-<li><strong>选择U盘启动方式</strong></li>
-<li><strong>进入安装界面</strong><ul>
-<li>选择-V启动，如果卡++++，更换OsxAptioFixDrv-64.efi</li>
-<li>卡Service only ran for 0 seconds. Pushing respawn out by 10 second，10.13后笔记本需要屏蔽独显安装，这里采用hotpatch屏蔽独显，将SSDT-DDGPU.ssdt放入clover/acpi/pached</li>
-<li><strong>惠普电脑</strong>clover需勾选Kernel Lapic</li>
-</ul>
-</li>
-<li>选择磁盘工具，进行抹盘，固态硬盘可选择APFS格式，要求硬盘的EFI分区不小于<strong>200M</strong>否则会抹盘失败</li>
-<li>根据提示进行安装，安装过程中需重启数次，每次重启要在clover界面选择之前<strong>安装的盘符</strong>启动</li>
-<li>不出意外的安装步骤已经结束了，接下来就是对驱动的完善以及变频的优化</li>
-</ul>
-<h3 id="四、逐步完善"><a href="#四、逐步完善" class="headerlink" title="四、逐步完善"></a>四、逐步完善</h3><ul>
-<li><strong>显卡驱动</strong>，一开始安装的时候采用的是注入ig-platform-id的方法驱动，我的HD5500采用的id为0x16260006，安装以后用的SSDT-IGPU.ssdt，新版本的IGPU的hotpatch可自动注入id。安装时直接采用hotpatch暂未尝试</li>
-<li><strong>声卡驱动</strong>，clover注入id为3，加入AppleALC.kext以及Lilu.kext，然后发现并不能驱动，后来尝试在DSDT中打了IRQ的补丁，重启驱动成功</li>
-<li><strong>网卡驱动</strong>，根据自己型号选择，本机采用的RTL8100的kext</li>
-<li><strong>亮度调节</strong>，使用SSDT-PLNF.ssdt和RMCF.ssdt配合AppleBacklightInjector.kext。参考帖： <a href="http://bbs.pcbeta.com/forum.php?mod=viewthread&amp;tid=1774672&amp;highlight=%D2%C6%B6%AF" target="_blank" rel="noopener">移动版Intel核显使用hotpatch实现亮度调节的方法</a><ul>
-<li>在使用本方法遇到一个问题，最大亮度不是硬件上最亮的问题。在尝试中发现移除了SLE的AppleBacklightInjector.kext后亮度依然可以调节（中途误删了AppleBacklightExpert.kext），并解决了最大亮度的问题。</li>
-</ul>
-</li>
-<li><strong>电池驱动</strong>，在10.12.x的时候采用的是DSDT打相似电池补丁以及配合AcpiBattery.kext的方法。在10.13.4的时候发现直接就驱动了，可能是新版本的电池驱动原生支持了本电脑。</li>
-<li>开机<strong>唤醒</strong>登录界面面<strong>卡顿</strong>，更换了许多SMBIOS的机型都没有成功，最后在搞变频的时候看到了这样一篇帖子：<a href="https://blog.daliansky.net/A-command-to-teach-you-how-to-confirm-their-own-models-and-how-to-open-the-HWP.html" target="_blank" rel="noopener">一条命令教你如何确认自己的机型及如何开启HWP</a>在把机型设置为符合条件的机型MacBook9.1后开机卡顿消失。</li>
-</ul>
+        <blockquote>
+<p>黑苹果CPU的变频受多重因素的影响，如SMBIOS机型、电源管理、x86驱动是否加载等，本机在安装10.13.4后，电源管理正常，x86正常加载，为解决开机卡顿的问题改了MP9.1的机型，但是变频不正常，最低档位1000，最高档位2700，导致温度有时较高，在采用了CPUFried后变频有所改进，最低档800，最高2200，但这种变频变频也有所牺牲，档位只有四个，并且电源管理面板也不完善。</p>
+</blockquote>
+<p>原贴地址：<a href="http://bbs.pcbeta.com/forum.php?mod=viewthread&amp;tid=1752935&amp;page=6#pid47433245" target="_blank" rel="noopener">CPUFriend - 动态注入 CPU 电源管理数据</a></p>
+<ol>
+<li>下载<a href="https://github.com/PMheart/CPUFriend" target="_blank" rel="noopener">CPUFriernd.kext</a></li>
+<li>下载<a href="https://github.com/PMheart/CPUFriend/tree/master/ResourceConverter" target="_blank" rel="noopener">ResourceConverter.sh</a></li>
+<li>在ResourceConverter.sh所在目录运行以下命令<code>./ResourceConverter.sh --kext /System/Library/Extensions/IOPlatformPluginFamily.kext/Contents/PlugIns/X86PlatformPlugin.kext/Contents/Resources/Mac-F60DEB81FF30ACF6.plist</code>其中后边的文件按目录找到对应SMBIOS机型board-ID对应的plist拖入终端即可，其中board-ID可以用clover查看</li>
+<li>完成后在ResourceConverter.sh同级目录下会生成一个CPUFriendDataProvider.kext文件，将其连同CPUFriend.kext放入clover的kext下即可</li>
+<li>重启查看变频效果</li>
+</ol>
 
       
     </div>
@@ -516,9 +497,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Hackintosh/" rel="tag"># Hackintosh</a>
-          
-            <a href="/tags/黑苹果/" rel="tag"># 黑苹果</a>
+            <a href="/tags/变频/" rel="tag"># 变频</a>
           
         </div>
       
@@ -531,8 +510,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/18/Hexo功能配置/" rel="next" title="Hexo功能配置">
-                <i class="fa fa-chevron-left"></i> Hexo功能配置
+              <a href="/2018/04/22/MAC实用技巧/" rel="next" title="MAC实用技巧">
+                <i class="fa fa-chevron-left"></i> MAC实用技巧
               </a>
             
           </div>
@@ -540,10 +519,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/04/19/hexo-小技巧/" rel="prev" title="Hexo 小技巧">
-                Hexo 小技巧 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -592,17 +567,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -704,22 +670,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、下载镜像"><span class="nav-number">1.</span> <span class="nav-text">一、下载镜像</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、镜像写入U盘"><span class="nav-number">2.</span> <span class="nav-text">二、镜像写入U盘</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、修改BIOS"><span class="nav-number">3.</span> <span class="nav-text">三、修改BIOS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、逐步完善"><span class="nav-number">4.</span> <span class="nav-text">四、逐步完善</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
