@@ -25,6 +25,7 @@ categories: MAC
 	- `Ctrl + ←`：上一个Space。
 	- `Ctrl + →`：下一个Space
 	- `Ctrl + Cmd + Space`：输入emoji，图片字符，特殊符号。
+	- `Option + 点击Dock图标`：隐藏/显示
 	- 在预览中启用放大镜：`~`。
 	- 选中文件时点击空格实现预览，按着option点空格全屏预览，包括各种文件。
 	- 大多数win下的快捷键把Ctrl换为Cmd即可。
