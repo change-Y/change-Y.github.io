@@ -30,20 +30,6 @@
     </url>
 
     <url>
-        <loc>http://yoursite.com/tags/Hackintosh/</loc>
-        <lastmod>2018-04-19T01:35:35.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/tags/%E9%BB%91%E8%8B%B9%E6%9E%9C/</loc>
-        <lastmod>2018-04-19T01:35:35.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://yoursite.com/tags/Git/</loc>
         <lastmod>2018-04-19T12:25:05.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -52,14 +38,28 @@
 
     <url>
         <loc>http://yoursite.com/tags/MAC/</loc>
-        <lastmod>2018-04-22T10:33:41.000Z</lastmod>
+        <lastmod>2018-05-03T04:02:33.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://yoursite.com/tags/%E5%8F%98%E9%A2%91/</loc>
-        <lastmod>2018-04-30T12:41:08.000Z</lastmod>
+        <lastmod>2018-05-03T06:02:19.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/tags/Hackintosh/</loc>
+        <lastmod>2018-05-03T06:05:11.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/tags/%E9%BB%91%E8%8B%B9%E6%9E%9C/</loc>
+        <lastmod>2018-05-03T06:07:10.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
