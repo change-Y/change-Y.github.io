@@ -31,3 +31,4 @@ categories: 黑苹果
 - 开机**唤醒**登录界面面**卡顿**，更换了许多SMBIOS的机型都没有成功，最后在搞变频的时候看到了这样一篇帖子：[一条命令教你如何确认自己的机型及如何开启HWP](https://blog.daliansky.net/A-command-to-teach-you-how-to-confirm-their-own-models-and-how-to-open-the-HWP.html)在把机型设置为符合条件的机型MacBook9.1后开机卡顿消失。
 - **修改系统分配的核显到2048M**，采用远景大神开发的工具：[[原创工具]自动生成核显补丁,提升显存至2G,还可以提取FB数据](http://bbs.pcbeta.com/viewthread-1784050-1-1.html)
 - **睡眠唤醒无声**，更新最新版的ALC驱动，并删除CC和EAPD驱动
+- **完善变频**，通过CpuFriend和CpuDateProvider动态注入变频数据，目前采用MBA7.2的变频数据并修改最低频率为800MHz。具体用法：[CPUFriend - 动态注入 CPU 电源管理数据](http://bbs.pcbeta.com/viewthread-1752935-1-1.html)。

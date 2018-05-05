@@ -31,7 +31,7 @@ categories: 黑苹果
 - AppleALC驱动在1.2.5后更新了CC驱动，可以直接解决睡眠唤醒无声的问题而不需要也不可以同时存在CC驱动。
 - CC驱动需要配合自身声卡的参数才可以生效。
 
-### 【2.18.5.5】变频问题
+### 【2018.5.5】变频问题
 
 - 由于原来的X86PlatformPlugin签名验证失败，所以更换了原版的IOPlatformPluginFamily.kext，修复权限后解决。
 - 先更换了7.2的机型使用ssdtPrGen.sh生成了变频ssdt，然后换回了9.1的机型（只有9.1的机型开机不卡顿）
@@ -41,4 +41,4 @@ categories: 黑苹果
 	- SSDT-XCPM.ssdt和CpuFriend.kext以及CpuDateprovider.kext的配合。
 	- 通过使用不同的机型plist生成不同变频效果的CpuDateprovider.kext。
 	- 目前采用修改过最低频率为800MHz的12.1的变频数据。
-
+	- 更新：测试MBA7.2并修改最低频率为800的变频数据更合适。
