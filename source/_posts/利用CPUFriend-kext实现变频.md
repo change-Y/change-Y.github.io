@@ -15,3 +15,25 @@ categories: 黑苹果
 3. 在ResourceConverter.sh所在目录运行以下命令`./ResourceConverter.sh --kext /System/Library/Extensions/IOPlatformPluginFamily.kext/Contents/PlugIns/X86PlatformPlugin.kext/Contents/Resources/Mac-F60DEB81FF30ACF6.plist `其中后边的文件按目录找到对应SMBIOS机型board-ID对应的plist拖入终端即可，其中board-ID可以用clover查看
 4. 完成后在ResourceConverter.sh同级目录下会生成一个CPUFriendDataProvider.kext文件，将其连同CPUFriend.kext放入clover的kext下即可
 5. 重启查看变频效果
+&nbsp;
+
+&nbsp;
+
+### 【2018.5.5】
+
+看了几篇技术贴：
+
+[关于 Broadwell 的加载原生电源疑问](http://bbs.pcbeta.com/forum.php?mod=viewthread&tid=1732231&page=2#pid46942265)
+
+[Native Power Management for Laptops](https://www.tonymacx86.com/threads/guide-native-power-management-for-laptops.175801/)
+
+经过不断地测试，初步可以总结出以下几点经验：
+
+1. 要想对变频效果进行调整及优化，首先确保要加载了原生电源管理，体现在两个X86加载，有完整的电源管理面板。
+2. 加载X86有两种方法：
+	- 采用ssdtPRGen.sh生成的ssdt。
+	- 采用SSDT-XCPM.ssdt，clover设置plugin-Type=1（适用于Haswell后的CPU）
+	
+	理论上应该如此，但在实际测试中需配合CPUFriend和CPUDateProvider才可以实现加载x86	以及完整的电源管理面板。
+	
+3. 当以上情况满足后，就可以通过CPUDateProvider来提供变频所需要的数据，可以尝试不同机型的plist生成的CPUDateProvider，以达到最佳变频效果。
