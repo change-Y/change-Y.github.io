@@ -107,7 +107,7 @@
 <meta property="og:site_name" content="Change">
 <meta property="og:description" content="【2018.5.3更新】经后来测试发现修改后CPU驱动并没有加载，删掉了修改后的两个驱动和删前是同样的变频效果，甚至还有几个负面影响，详见下篇博客。  黑苹果CPU的变频受多重因素的影响，如SMBIOS机型、电源管理、x86驱动是否加载等，本机在安装10.13.4后，电源管理正常，x86正常加载，为解决开机卡顿的问题改了MP9.1的机型，但是变频不正常，最低档位1000，最高档位2700，导致温度">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-05-03T06:02:19.000Z">
+<meta property="og:updated_time" content="2018-05-05T07:46:09.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="利用CPUFriend.kext实现变频">
 <meta name="twitter:description" content="【2018.5.3更新】经后来测试发现修改后CPU驱动并没有加载，删掉了修改后的两个驱动和删前是同样的变频效果，甚至还有几个负面影响，详见下篇博客。  黑苹果CPU的变频受多重因素的影响，如SMBIOS机型、电源管理、x86驱动是否加载等，本机在安装10.13.4后，电源管理正常，x86正常加载，为解决开机卡顿的问题改了MP9.1的机型，但是变频不正常，最低档位1000，最高档位2700，导致温度">
@@ -391,7 +391,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-05-03 14:02:19" itemprop="dateModified" datetime="2018-05-03T14:02:19+08:00">2018-05-03</time>
+                <time title="修改时间：2018-05-05 15:46:09" itemprop="dateModified" datetime="2018-05-05T15:46:09+08:00">2018-05-05</time>
               
             
           </span>
@@ -444,7 +444,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">725</span>
+                <span title="本文字数">1.1k</span>
               
 
               
@@ -458,7 +458,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">2 分钟</span>
+                <span title="阅读时长">3 分钟</span>
               
             </div>
           
@@ -488,7 +488,25 @@
 <li>下载<a href="https://github.com/PMheart/CPUFriend/tree/master/ResourceConverter" target="_blank" rel="noopener">ResourceConverter.sh</a></li>
 <li>在ResourceConverter.sh所在目录运行以下命令<code>./ResourceConverter.sh --kext /System/Library/Extensions/IOPlatformPluginFamily.kext/Contents/PlugIns/X86PlatformPlugin.kext/Contents/Resources/Mac-F60DEB81FF30ACF6.plist</code>其中后边的文件按目录找到对应SMBIOS机型board-ID对应的plist拖入终端即可，其中board-ID可以用clover查看</li>
 <li>完成后在ResourceConverter.sh同级目录下会生成一个CPUFriendDataProvider.kext文件，将其连同CPUFriend.kext放入clover的kext下即可</li>
-<li>重启查看变频效果</li>
+<li>重启查看变频效果<br>&nbsp;</li>
+</ol>
+<p>&nbsp;</p>
+<h3 id="【2018-5-5】"><a href="#【2018-5-5】" class="headerlink" title="【2018.5.5】"></a>【2018.5.5】</h3><p>看了几篇技术贴：</p>
+<p><a href="http://bbs.pcbeta.com/forum.php?mod=viewthread&amp;tid=1732231&amp;page=2#pid46942265" target="_blank" rel="noopener">关于 Broadwell 的加载原生电源疑问</a></p>
+<p><a href="https://www.tonymacx86.com/threads/guide-native-power-management-for-laptops.175801/" target="_blank" rel="noopener">Native Power Management for Laptops</a></p>
+<p>经过不断地测试，初步可以总结出以下几点经验：</p>
+<ol>
+<li>要想对变频效果进行调整及优化，首先确保要加载了原生电源管理，体现在两个X86加载，有完整的电源管理面板。</li>
+<li><p>加载X86有两种方法：</p>
+<ul>
+<li>采用ssdtPRGen.sh生成的ssdt。</li>
+<li><p>采用SSDT-XCPM.ssdt，clover设置plugin-Type=1（适用于Haswell后的CPU）</p>
+<p>理论上应该如此，但在实际测试中需配合CPUFriend和CPUDateProvider才可以实现加载x86    以及完整的电源管理面板。</p>
+</li>
+</ul>
+</li>
+<li><p>当以上情况满足后，就可以通过CPUDateProvider来提供变频所需要的数据，可以尝试不同机型的plist生成的CPUDateProvider，以达到最佳变频效果。</p>
+</li>
 </ol>
 
       
@@ -584,8 +602,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -694,6 +721,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#【2018-5-5】"><span class="nav-number">1.</span> <span class="nav-text">【2018.5.5】</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -719,7 +762,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">7k</span>
+    <span title="站点总字数">8k</span>
   
 
   
@@ -728,7 +771,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">17 分钟</span>
+    <span title="站点阅读时长">19 分钟</span>
   
 </div>
 
