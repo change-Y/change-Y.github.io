@@ -107,7 +107,7 @@
 <meta property="og:site_name" content="Change">
 <meta property="og:description" content="一、下载镜像 这里使用黑果小兵镜像10.13.4   二、镜像写入U盘 在win下使用transmac写入镜像，先格式化为hfs格式，在选择镜像写入（注意transmac要以管理员身份运行）  三、修改BIOS 关闭安全启动 选择U盘启动方式 进入安装界面 选择-V启动，如果卡++++，更换OsxAptioFixDrv-64.efi 卡Service only ran for 0 seconds.">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-05-05T15:36:29.000Z">
+<meta property="og:updated_time" content="2018-05-15T07:56:05.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="惠普r221tx 安装high sierra 10.13.4">
 <meta name="twitter:description" content="一、下载镜像 这里使用黑果小兵镜像10.13.4   二、镜像写入U盘 在win下使用transmac写入镜像，先格式化为hfs格式，在选择镜像写入（注意transmac要以管理员身份运行）  三、修改BIOS 关闭安全启动 选择U盘启动方式 进入安装界面 选择-V启动，如果卡++++，更换OsxAptioFixDrv-64.efi 卡Service only ran for 0 seconds.">
@@ -391,7 +391,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-05-05 23:36:29" itemprop="dateModified" datetime="2018-05-05T23:36:29+08:00">2018-05-05</time>
+                <time title="修改时间：2018-05-15 15:56:05" itemprop="dateModified" datetime="2018-05-15T15:56:05+08:00">2018-05-15</time>
               
             
           </span>
@@ -444,7 +444,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">1.3k</span>
+                <span title="本文字数">1.4k</span>
               
 
               
@@ -502,7 +502,7 @@
 <li><strong>声卡驱动</strong>，clover注入id为3，加入AppleALC.kext以及Lilu.kext，然后发现并不能驱动，后来尝试在DSDT中打了IRQ的补丁，重启驱动成功</li>
 <li><strong>网卡驱动</strong>，根据自己型号选择，本机采用的RTL8100的kext</li>
 <li><strong>亮度调节</strong>，使用SSDT-PLNF.ssdt和RMCF.ssdt配合AppleBacklightInjector.kext。参考帖： <a href="http://bbs.pcbeta.com/forum.php?mod=viewthread&amp;tid=1774672&amp;highlight=%D2%C6%B6%AF" target="_blank" rel="noopener">移动版Intel核显使用hotpatch实现亮度调节的方法</a><ul>
-<li>在使用本方法遇到一个问题，最大亮度不是硬件上最亮的问题。在尝试中发现移除了SLE的AppleBacklightInjector.kext后亮度依然可以调节（中途误删了AppleBacklightExpert.kext），并解决了最大亮度的问题。</li>
+<li>在使用本方法遇到一个问题，最大亮度不是硬件上最亮的问题。在尝试中发现移除了SLE的AppleBacklightInjector.kext后亮度依然可以调节（中途误删了AppleBacklightExpert.kext），并解决了最大亮度的问题，但亮度调节档位不均匀。—–后采用0x16260006的ig-platform-id解决，无需删除ABI驱动。</li>
 </ul>
 </li>
 <li><strong>电池驱动</strong>，在10.12.x的时候采用的是DSDT打相似电池补丁以及配合AcpiBattery.kext的方法。在10.13.4的时候发现直接就驱动了，可能是新版本的电池驱动原生支持了本电脑。</li>
@@ -776,7 +776,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">20 分钟</span>
+    <span title="站点阅读时长">21 分钟</span>
   
 </div>
 
