@@ -24,7 +24,8 @@ categories: 搭建博客
 
 ### 三、本地资料丢失后的流程
 1. 使用git clone git@github.com:change-Y/change-Y.github.io.git拷贝仓库（默认分支为hexo）；
-2. 在本地新拷贝的change-Y.github.io文件夹下通过Git bash依次执行下列指令：`bash npm install hexo`、`npm install`、`npm install hexo-deployer-git`（记得，不需要hexo init这条指令）。
+2. 安装nodejs、git、hexo。安装hexo时如遇到权限错误可在安装命令前加sudo。
+3. 在本地新拷贝的change-Y.github.io文件夹下通过Git bash依次执行下列指令：`npm install hexo`、`npm install`、`npm install hexo-deployer-git`（记得，不需要hexo init这条指令）。
 
 -----
 部分内容摘自知乎[CrazyMilk的回答](https://www.zhihu.com/question/21193762)，感谢！

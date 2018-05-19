@@ -26,7 +26,7 @@ categories: 黑苹果
 - **声卡驱动**，clover注入id为3，加入AppleALC.kext以及Lilu.kext，然后发现并不能驱动，后来尝试在DSDT中打了IRQ的补丁，重启驱动成功
 - **网卡驱动**，根据自己型号选择，本机采用的RTL8100的kext
 - **亮度调节**，使用SSDT-PLNF.ssdt和RMCF.ssdt配合AppleBacklightInjector.kext。参考帖： [移动版Intel核显使用hotpatch实现亮度调节的方法](http://bbs.pcbeta.com/forum.php?mod=viewthread&tid=1774672&highlight=%D2%C6%B6%AF)
-	- 在使用本方法遇到一个问题，最大亮度不是硬件上最亮的问题。在尝试中发现移除了SLE的AppleBacklightInjector.kext后亮度依然可以调节（中途误删了AppleBacklightExpert.kext），并解决了最大亮度的问题。
+	- 在使用本方法遇到一个问题，最大亮度不是硬件上最亮的问题。在尝试中发现移除了SLE的AppleBacklightInjector.kext后亮度依然可以调节（中途误删了AppleBacklightExpert.kext），并解决了最大亮度的问题，但亮度调节档位不均匀。-----后采用0x16260006的ig-platform-id解决，无需删除ABI驱动。
 - **电池驱动**，在10.12.x的时候采用的是DSDT打相似电池补丁以及配合AcpiBattery.kext的方法。在10.13.4的时候发现直接就驱动了，可能是新版本的电池驱动原生支持了本电脑。
 - 开机**唤醒**登录界面面**卡顿**，更换了许多SMBIOS的机型都没有成功，最后在搞变频的时候看到了这样一篇帖子：[一条命令教你如何确认自己的机型及如何开启HWP](https://blog.daliansky.net/A-command-to-teach-you-how-to-confirm-their-own-models-and-how-to-open-the-HWP.html)在把机型设置为符合条件的机型MacBook9.1后开机卡顿消失。
 - **修改系统分配的核显到2048M**，采用远景大神开发的工具：[[原创工具]自动生成核显补丁,提升显存至2G,还可以提取FB数据](http://bbs.pcbeta.com/viewthread-1784050-1-1.html)
