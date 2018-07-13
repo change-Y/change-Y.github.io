@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[git 常用命令]]></title>
+    <url>%2F2018%2F07%2F13%2Fgit-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%2F</url>
+    <content type="text"><![CDATA[Git随手记一.git add .、git add -u、git add -A的区别 git add .：他会监控工作区的状态树，使用它会把工作时的所有变化提交到暂存区，包括文件内容修改(modified)以及新文件(new)，但不包括被删除的文件。—-git 1.x version git add -u：他仅监控已经被add的文件（即tracked file），他会将被修改的文件和删除的文件提交到暂存区。add -u 不会提交新文件（untracked file）。（git add –update的缩写） git add -A：是上面两个功能的合集（git add –all的缩写） 在git 2.x version后git add . = git add -A git commit -am &quot;···&quot;是git add .和git commit -m &quot;···&quot;的结合体，但只能提交已经追踪过的文件，即只能提交修改不能提交增加。]]></content>
+      <categories>
+        <category>Git</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[JavaScript中的点点滴滴]]></title>
     <url>%2F2018%2F07%2F13%2Fjs%E4%B8%AD%E7%9A%84%E7%82%B9%E7%82%B9%E6%BB%B4%E6%BB%B4%2F</url>
     <content type="text"><![CDATA[这里记录一些js学习中遇到的问题及解决方案，也是对js知识的积累。 为DOM元素添加事件的一些问题今天在学习ajax的时候，给页面的button按钮添加onclick事件时，发现了下面一些问题： 1btn.onclick = request(); 这样写会页面加载会直接执行request函数。 1btn.onclick = request; 这样则不会直接执行，但面临的问题是如果需要传递参数怎么办？于是有了下面这种写法 123btn.onclick = function(arg)&#123; request(arg);&#125; 所以在为元素添加事件，包括添加监听事件以及jQuery的写法中，如需传参，都要按照函数内调用函数这种写法才能保证事件能够正确绑定。 在元素的特性中的写法则为： 1&lt;button onclick="request()";&gt;请求&lt;/button&gt; 回调函数的理解 在JavaScript中，回调函数具体的定义为：函数A作为参数(函数引用)传递到另一个函数B中，并且这个函数B执行函数A。我们就说函数A叫做回调函数。如果没有名称(函数表达式)，就叫做匿名回调函数。 例如forEach方法： 123arr.forEach(function(value,index,arr)&#123; //这里就是回调函数&#125;)]]></content>
@@ -100,17 +111,6 @@
       </categories>
       <tags>
         <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Git部分学习笔记]]></title>
-    <url>%2F2018%2F04%2F18%2FGit%E9%83%A8%E5%88%86%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%2F</url>
-    <content type="text"><![CDATA[Git随手记一.git add .、git add -u、git add -A的区别 git add .：他会监控工作区的状态树，使用它会把工作时的所有变化提交到暂存区，包括文件内容修改(modified)以及新文件(new)，但不包括被删除的文件。—-git 1.x version git add -u：他仅监控已经被add的文件（即tracked file），他会将被修改的文件和删除的文件提交到暂存区。add -u 不会提交新文件（untracked file）。（git add –update的缩写） git add -A：是上面两个功能的合集（git add –all的缩写） 在git 2.x version后git add . = git add -A git commit -am &quot;···&quot;是git add .和git commit -m &quot;···&quot;的结合体，但只能提交已经追踪过的文件，即只能提交修改不能提交增加。]]></content>
-      <categories>
-        <category>Git</category>
-      </categories>
-      <tags>
-        <tag>Git</tag>
       </tags>
   </entry>
   <entry>
