@@ -45,4 +45,4 @@ categories: 黑苹果
 
 ### 【2018.5.15】亮度最大值问题
 之前在搞10.13的亮度调节时参照了这个帖子[移动版Intel核显使用hotpatch实现亮度调节的方法](http://bbs.pcbeta.com/forum.php?mod=viewthread&tid=1774672&highlight=%D2%C6%B6%AF)，后更新了[第二版](http://bbs.pcbeta.com/forum.php?mod=viewthread&tid=1783713)。再详细看过教程以后，发现1.大部分笔记本无需注入EDID于是删掉，2.之前放入AppleBacklightInjector亮度不能够最大的原因和ig-platform-id有关，于是想到当前显卡驱动的方式是SSDT-IGPU自动注入的，查了FB数据发现用的是0x16260004，于是删掉了这个ssdt，并在注入了clover推荐的id：0x16260006.重启，亮度达到了最大值，之前采用的方法是删除AppleBacklightInjector驱动，但亮度调节档位不均匀。
-总结：使用ABI驱动来调节亮度的话一定要使用正确的ig-platform-id，否则会影响最大亮度值。
+总结：使用ABI驱动来调节亮度的话一定要使用正确的ig-platform-id，否则会影响最大亮度值。驱动要安装到S/L/E或者L/E，安装在clover需要将inject kexts设置为Yes。

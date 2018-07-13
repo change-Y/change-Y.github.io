@@ -23,8 +23,10 @@ categories: 搭建博客
 2. 部署`hexo，hexo g -d`
 
 ### 三、本地资料丢失后的流程
-1. 使用git clone git@github.com:change-Y/change-Y.github.io.git拷贝仓库（默认分支为hexo）；
-2. 安装nodejs、git、hexo。安装hexo时如遇到权限错误可在安装命令前加sudo。
+
+1. 安装nodejs、git、hexo。安装hexo时如遇到权限错误可在安装命令前加sudo。
+2. 设置用户名和邮箱，关联远程仓库和添加公钥，参考[手把手教从零开始在GitHub上使用Hexo搭建博客教程(一)-附GitHub注册及配置](https://www.jianshu.com/p/f4cc5866946b)
+2. 使用git clone git@github.com:change-Y/change-Y.github.io.git拷贝仓库（默认分支为hexo）；
 3. 在本地新拷贝的change-Y.github.io文件夹下通过Git bash依次执行下列指令：`npm install hexo`、`npm install`、`npm install hexo-deployer-git`（记得，不需要hexo init这条指令）。
 
 -----
