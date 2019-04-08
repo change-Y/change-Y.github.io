@@ -107,7 +107,7 @@
 <meta property="og:site_name" content="Change">
 <meta property="og:description" content="安装好黑苹果后有许多要完善的地方以及使用中会遇到各种问题，这里记录一些偶然解决的问题的方案以及过程。  【2018.5.2】USB问题以及睡眠自动唤醒起因是插了U盘后发现提示需要为USB配件提供电源而导致USB设备无法使用，在远景搜索后有提示说吧USBInjectAll这个驱动删掉，删掉后重启发现问题解决但USB3.0达不到5G而且摄像头也不能加载，于是这并不能当做解决方案，后来就在想是不是因为">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-05T08:40:22.889Z">
+<meta property="og:updated_time" content="2019-04-08T11:25:39.829Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hackintosh遇到的问题以及解决方案">
 <meta name="twitter:description" content="安装好黑苹果后有许多要完善的地方以及使用中会遇到各种问题，这里记录一些偶然解决的问题的方案以及过程。  【2018.5.2】USB问题以及睡眠自动唤醒起因是插了U盘后发现提示需要为USB配件提供电源而导致USB设备无法使用，在远景搜索后有提示说吧USBInjectAll这个驱动删掉，删掉后重启发现问题解决但USB3.0达不到5G而且摄像头也不能加载，于是这并不能当做解决方案，后来就在想是不是因为">
@@ -391,7 +391,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-04-05 16:40:22" itemprop="dateModified" datetime="2019-04-05T16:40:22+08:00">2019-04-05</time>
+                <time title="修改时间：2019-04-08 19:25:39" itemprop="dateModified" datetime="2019-04-08T19:25:39+08:00">2019-04-08</time>
               
             
           </span>
@@ -444,7 +444,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">2.2k</span>
+                <span title="本文字数">3k</span>
               
 
               
@@ -458,7 +458,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">6 分钟</span>
+                <span title="阅读时长">8 分钟</span>
               
             </div>
           
@@ -523,6 +523,33 @@
 <li>开机显卡正常，WiFi正常，修复权限重建缓存后声卡正常。</li>
 <li>变频无法最低800，后提取了新的MacBook7.2的变频文件，更新了CPUFriend.kext，并按照以前的帖子重新制作了CPUDateProvider.kext，开机后恢复最低800频率。</li>
 </ul>
+<h3 id="【2019-4-8】更换显卡驱动方式以及亮度调节方式"><a href="#【2019-4-8】更换显卡驱动方式以及亮度调节方式" class="headerlink" title="【2019.4.8】更换显卡驱动方式以及亮度调节方式"></a>【2019.4.8】更换显卡驱动方式以及亮度调节方式</h3><p>目前各种显卡大多都依赖者WhatEverGreen这个驱动，今天也想通过这种方式来驱动我的HD5500。于是就仔细浏览了<a href="https://github.com/acidanthera/WhateverGreen/blob/master/Manual/FAQ.IntelHD.cn.md" target="_blank" rel="noopener">WEG的官方使用说明</a>，结合<a href="http://bbs.pcbeta.com/viewthread-1794948-1-1.html" target="_blank" rel="noopener">黑果小兵关于Hackintool的教程</a>成功驱动了显卡，并应用了最新的亮度调节方法。</p>
+<blockquote>
+<p>以下只是概述，具体操作还要按照上边两个帖子一步一步来。</p>
+</blockquote>
+<p><strong>以前的驱动方法：</strong></p>
+<ul>
+<li>注入合适的ig-plateform-id，对于HD5500就是0x16260006（HD6000的id）</li>
+<li>使用ssdt-IGPU自动注入（后测试此方法不完美，影响亮度调节的档位及最大值）</li>
+</ul>
+<p><strong>现在的驱动方法：</strong></p>
+<ul>
+<li>配合WEG驱动，使用Hackintool在clover的Device中打补丁，实际上就是注入显卡的各种数据，目前用到的有：ig-plateform-id、修改显存2048M、修改DVMT值、禁用eGPU。</li>
+</ul>
+<blockquote>
+<p>对于BIOS的DVMT Pre-Allocated值大小32M而又无法调节的机型， 需要采用一些方法：最早是通过clover的kexttopatch打补丁，每次更新需要换补丁；后来通过InterGraphicDVMTfixup驱动来防止内核崩溃；现在采用的方式是Hackintool在clover的Device中打补丁解决。</p>
+</blockquote>
+<p><strong>以前的亮度调节方法：</strong></p>
+<ol>
+<li>安装AppleBacklightInjector.kext驱动。</li>
+<li>kexttopatch打补丁。</li>
+<li>放入SSDT-PNLF。</li>
+</ol>
+<p><strong>现在的亮度调节方法：</strong></p>
+<ol>
+<li>WhatEverGreen.kext。</li>
+<li>勾选AddPNLF的DSDT补丁与SetIntelBacklight, SetIntelMaxBacklight两项，无需为其赋值，Clover 会根据相应的处理器型号自动适配。要想亮度调节完美，同样需要选择好最合适的ig-Plateform-id。</li>
+</ol>
 
       
     </div>
@@ -753,7 +780,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#【2018-5-2】USB问题以及睡眠自动唤醒"><span class="nav-number">1.</span> <span class="nav-text">【2018.5.2】USB问题以及睡眠自动唤醒</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#【2018-5-3】睡眠唤醒无声"><span class="nav-number">2.</span> <span class="nav-text">【2018.5.3】睡眠唤醒无声</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#【2018-5-5】变频问题"><span class="nav-number">3.</span> <span class="nav-text">【2018.5.5】变频问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#【2018-5-15】亮度最大值问题"><span class="nav-number">4.</span> <span class="nav-text">【2018.5.15】亮度最大值问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#【2019-4-4】更新10-14-4"><span class="nav-number">5.</span> <span class="nav-text">【2019.4.4】更新10.14.4</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#【2018-5-2】USB问题以及睡眠自动唤醒"><span class="nav-number">1.</span> <span class="nav-text">【2018.5.2】USB问题以及睡眠自动唤醒</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#【2018-5-3】睡眠唤醒无声"><span class="nav-number">2.</span> <span class="nav-text">【2018.5.3】睡眠唤醒无声</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#【2018-5-5】变频问题"><span class="nav-number">3.</span> <span class="nav-text">【2018.5.5】变频问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#【2018-5-15】亮度最大值问题"><span class="nav-number">4.</span> <span class="nav-text">【2018.5.15】亮度最大值问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#【2019-4-4】更新10-14-4"><span class="nav-number">5.</span> <span class="nav-text">【2019.4.4】更新10.14.4</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#【2019-4-8】更换显卡驱动方式以及亮度调节方式"><span class="nav-number">6.</span> <span class="nav-text">【2019.4.8】更换显卡驱动方式以及亮度调节方式</span></a></li></ol></div>
             
 
           </div>
@@ -785,7 +812,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">11k</span>
+    <span title="站点总字数">12k</span>
   
 
   
@@ -794,7 +821,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">27 分钟</span>
+    <span title="站点阅读时长">29 分钟</span>
   
 </div>
 
