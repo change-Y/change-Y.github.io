@@ -46,3 +46,40 @@ categories: 黑苹果
 ### 【2018.5.15】亮度最大值问题
 之前在搞10.13的亮度调节时参照了这个帖子[移动版Intel核显使用hotpatch实现亮度调节的方法](http://bbs.pcbeta.com/forum.php?mod=viewthread&tid=1774672&highlight=%D2%C6%B6%AF)，后更新了[第二版](http://bbs.pcbeta.com/forum.php?mod=viewthread&tid=1783713)。再详细看过教程以后，发现1.大部分笔记本无需注入EDID于是删掉，2.之前放入AppleBacklightInjector亮度不能够最大的原因和ig-platform-id有关，于是想到当前显卡驱动的方式是SSDT-IGPU自动注入的，查了FB数据发现用的是0x16260004，于是删掉了这个ssdt，并在注入了clover推荐的id：0x16260006.重启，亮度达到了最大值，之前采用的方法是删除AppleBacklightInjector驱动，但亮度调节档位不均匀。
 总结：使用ABI驱动来调节亮度的话一定要使用正确的ig-platform-id，否则会影响最大亮度值。驱动要安装到S/L/E或者L/E，安装在clover需要将inject kexts设置为Yes。
+
+### 【2019.4.4】更新10.14.4
+在10.13.6下稳定体验了将近一年的时间了，今天忍不住更新了10.14.4（MacOS Mojave）。虽说更新内容并没有什么吸引我的地方，但是作为强迫症的我一向习惯保持软件为最新状态。
+在U盘都没有的情况下，我真不知道我哪来的勇气去直接更新。但是令我没想到是，整个过程竟是如此顺利：
+
+- 更新clover到最新版本（直接下载了driver64.efi替换旧版本即可）。
+- 更新驱动到最新版。
+- 到应用商店下载macOS Mojave，点击安装，一路next。
+- 很幸运一路没有五国。
+- 开机显卡正常，WiFi正常，修复权限重建缓存后声卡正常。
+- 变频无法最低800，后提取了新的MacBook7.2的变频文件，更新了CPUFriend.kext，并按照以前的帖子重新制作了CPUDateProvider.kext，开机后恢复最低800频率。
+
+### 【2019.4.8】更换显卡驱动方式以及亮度调节方式
+目前各种显卡大多都依赖者WhatEverGreen这个驱动，今天也想通过这种方式来驱动我的HD5500。于是就仔细浏览了[WEG的官方使用说明](https://github.com/acidanthera/WhateverGreen/blob/master/Manual/FAQ.IntelHD.cn.md)，结合[黑果小兵关于Hackintool的教程](http://bbs.pcbeta.com/viewthread-1794948-1-1.html)成功驱动了显卡，并应用了最新的亮度调节方法。
+> 以下只是概述，具体操作还要按照上边两个帖子一步一步来。
+
+**以前的驱动方法：**
+
+- 注入合适的ig-plateform-id，对于HD5500就是0x16260006（HD6000的id）
+- 使用ssdt-IGPU自动注入（后测试此方法不完美，影响亮度调节的档位及最大值）
+
+**现在的驱动方法：**
+
+- 配合WEG驱动，使用Hackintool在clover的Device中打补丁，实际上就是注入显卡的各种数据，目前用到的有：ig-plateform-id、修改显存2048M、修改DVMT值、禁用eGPU。
+
+> 对于BIOS的DVMT Pre-Allocated值大小32M而又无法调节的机型， 需要采用一些方法：最早是通过clover的kexttopatch打补丁，每次更新需要换补丁；后来通过InterGraphicDVMTfixup驱动来防止内核崩溃；现在采用的方式是Hackintool在clover的Device中打补丁解决。
+
+**以前的亮度调节方法：**
+
+1. 安装AppleBacklightInjector.kext驱动。
+2. kexttopatch打补丁。
+3. 放入SSDT-PNLF。
+
+**现在的亮度调节方法：**
+
+1. WhatEverGreen.kext。
+2. 勾选AddPNLF的DSDT补丁与SetIntelBacklight, SetIntelMaxBacklight两项，无需为其赋值，Clover 会根据相应的处理器型号自动适配。要想亮度调节完美，同样需要选择好最合适的ig-Plateform-id。
