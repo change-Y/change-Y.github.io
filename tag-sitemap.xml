@@ -23,20 +23,6 @@
     </url>
 
     <url>
-        <loc>http://yoursite.com/tags/%E7%BE%8E%E6%96%87/</loc>
-        <lastmod>2018-05-04T11:56:09.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/tags/%E4%BA%BA%E7%94%9F/</loc>
-        <lastmod>2018-05-04T11:56:09.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://yoursite.com/tags/Markdown/</loc>
         <lastmod>2018-05-04T12:02:39.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -46,20 +32,6 @@
     <url>
         <loc>http://yoursite.com/tags/%E5%8F%98%E9%A2%91/</loc>
         <lastmod>2018-05-05T07:46:09.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/tags/Hackintosh/</loc>
-        <lastmod>2018-05-15T07:56:05.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/tags/%E5%8D%9A%E5%AE%A2/</loc>
-        <lastmod>2018-05-19T04:33:52.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -86,8 +58,36 @@
     </url>
 
     <url>
+        <loc>http://yoursite.com/tags/%E7%BE%8E%E6%96%87/</loc>
+        <lastmod>2019-04-12T05:25:31.191Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/tags/%E4%BA%BA%E7%94%9F/</loc>
+        <lastmod>2019-04-12T05:25:31.191Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/tags/%E5%8D%9A%E5%AE%A2/</loc>
+        <lastmod>2019-04-12T05:25:34.918Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/tags/Hackintosh/</loc>
+        <lastmod>2019-04-12T05:33:37.854Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://yoursite.com/tags/%E9%BB%91%E8%8B%B9%E6%9E%9C/</loc>
-        <lastmod>2019-04-12T05:02:59.918Z</lastmod>
+        <lastmod>2019-04-12T05:33:37.854Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
