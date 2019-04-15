@@ -7,13 +7,6 @@
     </url>
 
     <url>
-        <loc>http://yoursite.com/categories/MAC/</loc>
-        <lastmod>2018-05-03T04:02:33.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://yoursite.com/categories/Markdown/</loc>
         <lastmod>2018-05-04T12:02:39.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -56,8 +49,15 @@
     </url>
 
     <url>
+        <loc>http://yoursite.com/categories/MAC/</loc>
+        <lastmod>2019-04-12T07:03:23.627Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://yoursite.com/categories/%E9%BB%91%E8%8B%B9%E6%9E%9C/</loc>
-        <lastmod>2019-04-12T05:33:37.854Z</lastmod>
+        <lastmod>2019-04-15T14:55:06.745Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
