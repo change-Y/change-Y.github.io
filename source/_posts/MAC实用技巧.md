@@ -36,4 +36,6 @@ categories: MAC
 	- 跳过百度云大文件检测：Safari开发选项中使用win下的浏览器代理。
 	- 归类文件：选中多个文件右键选择使用多个文件新建文件夹。
 	- MD5校验，终端：`MD5 文件名`。
+	- `kextstat | grep -v "com.apple"`      显示除了苹果之外的驱动加载
+`kextstat | grep -v "com.apple" | grep -v "Energy"`   查看加载的非官方驱动
 	- 未完待续。。。

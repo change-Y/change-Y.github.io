@@ -3,6 +3,7 @@ title: 惠普r221tx 安装high sierra 10.13.4
 date: 2018-04-19 07:39:14
 tags: [Hackintosh,黑苹果]
 categories: 黑苹果
+top: 2
 ---
 ### 一、下载镜像
 - 这里使用黑果小兵镜像[10.13.4](https://blog.daliansky.net/macOS-High-Sierra-10.13.4-17E199-Release-Version-and-Clover-4418-Original-Image.html#more) 
