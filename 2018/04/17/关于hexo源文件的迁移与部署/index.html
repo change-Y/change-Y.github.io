@@ -107,7 +107,7 @@
 <meta property="og:site_name" content="Change">
 <meta property="og:description" content="为解决意外情况hexo源文件丢失的情况，采用在GitHub的建站仓库上创建一个额外的分支来存放源文件的方法。  一.初次搭建hexo静态博客 创建仓库：change-Y.gitHub.io； 新建一个Readme（不然可能由于空仓库无法进行下边的新建分支操作）； 新建一个分支hexo用来存放hexo源文件，并设为默认分支（master用来存放静态页面，我们今后只需要对hexo分支进行操作即可）；">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-12T05:25:34.000Z">
+<meta property="og:updated_time" content="2020-03-10T13:44:55.828Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于hexo源文件的迁移与部署">
 <meta name="twitter:description" content="为解决意外情况hexo源文件丢失的情况，采用在GitHub的建站仓库上创建一个额外的分支来存放源文件的方法。  一.初次搭建hexo静态博客 创建仓库：change-Y.gitHub.io； 新建一个Readme（不然可能由于空仓库无法进行下边的新建分支操作）； 新建一个分支hexo用来存放hexo源文件，并设为默认分支（master用来存放静态页面，我们今后只需要对hexo分支进行操作即可）；">
@@ -391,7 +391,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-04-12 13:25:34" itemprop="dateModified" datetime="2019-04-12T13:25:34+08:00">2019-04-12</time>
+                <time title="修改时间：2020-03-10 21:44:55" itemprop="dateModified" datetime="2020-03-10T21:44:55+08:00">2020-03-10</time>
               
             
           </span>
@@ -444,7 +444,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">1.1k</span>
+                <span title="本文字数">1.4k</span>
               
 
               
@@ -458,7 +458,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">3 分钟</span>
+                <span title="阅读时长">4 分钟</span>
               
             </div>
           
@@ -495,7 +495,17 @@
 <li>提交源文件到hexo分支，依次执行<code>git add .</code>、<code>git commit -m &quot;...&quot;</code>、<code>git push origin hexo</code>指令将改动推送到GitHub（此时当前分支应为hexo）；</li>
 <li>部署<code>hexo，hexo g -d</code></li>
 </ol>
-<h3 id="三、本地资料丢失后的流程"><a href="#三、本地资料丢失后的流程" class="headerlink" title="三、本地资料丢失后的流程"></a>三、本地资料丢失后的流程</h3><ol>
+<h3 id="三、本地资料还在，重装了系统"><a href="#三、本地资料还在，重装了系统" class="headerlink" title="三、本地资料还在，重装了系统"></a>三、本地资料还在，重装了系统</h3><ol>
+<li>安装nodejs、git、hexo。安装hexo时如遇到权限错误可在安装命令前加sudo。</li>
+<li>设置用户名和邮箱，关联远程仓库和添加公钥：</li>
+<li><code></code>git config –global user.name<code>&quot;你的GitHub用户名&quot;</code></li>
+<li><code>git config --global user.email &quot;你的GitHub注册邮箱&quot;</code></li>
+<li><code>$ ssh-keygen -t rsa -C &quot;你的GitHub注册邮箱&quot;</code></li>
+<li>将生成的公钥添加到GitHub的个人设置里。</li>
+<li><code>$ ssh -T git@github.com</code></li>
+<li>如果测试绑定成功就可以在hexo文件夹里执行命令了。</li>
+</ol>
+<h3 id="四、本地资料丢失后的流程"><a href="#四、本地资料丢失后的流程" class="headerlink" title="四、本地资料丢失后的流程"></a>四、本地资料丢失后的流程</h3><ol>
 <li>安装nodejs、git、hexo。安装hexo时如遇到权限错误可在安装命令前加sudo。</li>
 <li>设置用户名和邮箱，关联远程仓库和添加公钥，参考<a href="https://www.jianshu.com/p/f4cc5866946b" target="_blank" rel="noopener">手把手教从零开始在GitHub上使用Hexo搭建博客教程(一)-附GitHub注册及配置</a></li>
 <li>使用git clone <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:change-Y/change-Y.github.io.git拷贝仓库（默认分支为hexo）；</li>
@@ -733,7 +743,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一-初次搭建hexo静态博客"><span class="nav-number">1.</span> <span class="nav-text">一.初次搭建hexo静态博客</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二-日常的改动流程"><span class="nav-number">2.</span> <span class="nav-text">二.日常的改动流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、本地资料丢失后的流程"><span class="nav-number">3.</span> <span class="nav-text">三、本地资料丢失后的流程</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一-初次搭建hexo静态博客"><span class="nav-number">1.</span> <span class="nav-text">一.初次搭建hexo静态博客</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二-日常的改动流程"><span class="nav-number">2.</span> <span class="nav-text">二.日常的改动流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、本地资料还在，重装了系统"><span class="nav-number">3.</span> <span class="nav-text">三、本地资料还在，重装了系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、本地资料丢失后的流程"><span class="nav-number">4.</span> <span class="nav-text">四、本地资料丢失后的流程</span></a></li></ol></div>
             
 
           </div>
